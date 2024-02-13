@@ -1,0 +1,26 @@
+{
+  "name": "projeto-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run",
+    "test:smoke": "npx cypress run --env grep=@smoke",
+    "test:contract": "npx cypress run --env grep=@contract",
+    "test:functional": "npx cypress run --env grep=@functional",
+    "report:json": "npx mochawesome-merge cypress/results/*.json -o cypress/results/relatorio.json",
+    "report:html": "npx marge cypress/results/relatorio.json -o cypress/results"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cypress/grep": "^4.0.1",
+    "cy-spok": "^1.6.2",
+    "cypress": "^13.2.0",
+    "cypress-plugin-api": "^2.11.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
